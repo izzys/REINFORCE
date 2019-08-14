@@ -4,7 +4,7 @@ addpath('Env')
 addpath('Algos')
 addpath('Policies')
 
-run('Env\globalParameters')
+run( fullfile('Env','globalParameters') )
 
 %% set env:
 env = TargetAndTrackingSystem();
@@ -28,7 +28,7 @@ theta0 = [0,0];
 algo.init_training(theta0);
 
 %% Estimate J  (Brute Force estimeation in the 2D case, for illustration purpases only):
-%algo.EstimateJ()
+algo.EstimateJ()
 
 %% learn!      
 algo.train()
